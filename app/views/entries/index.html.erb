@@ -1,0 +1,15 @@
+<h1>Bob's ruby blog posts:</h1>
+
+<% @entries.each do |entry| %>
+	<div style="font-size: 30px; font-weight: bold;"><%= link_to entry.title, entry_path(entry) %></div>
+	<div><%= entry.text %></div>
+	<br>&nbsp;<br>
+<% end %>
+
+<% if session[:admin].present? && session[:admin] == true
+	concat button_to "Create new post", new_entry_path
+	concat button_to "Log out", logout_entry_path
+else
+	concat button_to "Login", login_entry_path
+end
+%>

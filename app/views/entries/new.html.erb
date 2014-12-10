@@ -1,0 +1,11 @@
+New blog entry
+<br/> &nbsp;
+<%= form_for :entry, url: entries_path do |form| %>
+	<%= form.label :title %><br>
+	<%= form.text_field :title %>
+	<br/>&nbsp;<br/>
+	<%= form.label :text %><br>
+	<%= form.text_field:text %>
+	<br/>&nbsp;<br/>
+	<%= form.submit %>
+<% end %>
